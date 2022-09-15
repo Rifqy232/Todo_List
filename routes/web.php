@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\TodoController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,3 +23,6 @@ Route::get('/{id}/edit', [TodoController::class, 'editTodo']);
 Route::put('/{id}', [TodoController::class, 'updateTodo']);
 
 Route::delete('/{id}', [TodoController::class, 'destroy']);
+
+
+Route::get('/about', [AboutController::class, 'index']);

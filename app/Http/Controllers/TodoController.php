@@ -11,6 +11,7 @@ class TodoController extends Controller
     {
         return view('todos.index', [
             'todos' => DB::table('todos')->orderByDesc('id')->get(),
+            'title' => 'TodoApp | Dashboard',
         ]);
     }
 
@@ -27,6 +28,7 @@ class TodoController extends Controller
     {
         $task = DB::table('todos')->where('id', $id)->first();
         return view('todos.edit', [
+            'title' => 'TodoApp | Edit',
             'item' => $task,
         ]);
     }
